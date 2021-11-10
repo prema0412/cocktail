@@ -3,13 +3,15 @@ import React from 'react'
 
 const CardList = (props) => {
 
-    const {cocktailList} = props;
+    const { key, drinkName, image } = props;
 
-    console.log(cocktailList);
+    //console.log(drink);
 
     return (
-        <div>
-            <h1>Hello from Card List</h1>
+        <div className="cocktail">
+            <img className="cocktail__image" src={image} alt="" />
+            <h1 className="cocktail__title">{drinkName}</h1>
+           
         </div>
     )
 }

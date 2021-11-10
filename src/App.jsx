@@ -16,10 +16,10 @@ const App = () => {
   cocktailList = drinks
 
   return (
-    <>
+    <section class="app">
     <Nav />
-    <Main drinks={cocktailList}/>
-    </>
+    <Main class="main" drinks={cocktailList}/>
+    </section>
   )
 }
 

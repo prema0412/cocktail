@@ -9,8 +9,11 @@ const Main = (props) => {
 
     console.log(drinks);
     return (
-        <div>
-            <CardList />
+        <div className="main">
+        {drinks.map( (drink, index) => (
+            <CardList className="cocktail" key={drink.idDrink} drinkName={drink.strDrink} image={drink.strDrinkThumb}/>
+        ))}
+            
         </div>
     )
 }
