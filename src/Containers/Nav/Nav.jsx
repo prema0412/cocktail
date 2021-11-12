@@ -20,7 +20,7 @@ const Nav = (props) => {
     const [ searchTerm, setSearchTerm ] = useState("");
     const [ isChecked, setIsChecked ] = useState(false);
     const [ showSettings, setShowSettings ] = useState(false);
-    const [ showNav, setShowNav ] = useState(false);
+    const [ showNav, setShowNav ] = useState(true);
     
     
 
@@ -39,13 +39,17 @@ const Nav = (props) => {
         setShowSettings( !showSettings )
     }
 
+    const toggleNav = () => {
+        setShowNav( !showNav )
+    }
+
 
     return (
 
         <>
             <div class="nav__main">
     
-             <img src={menu} className="nav__item nav__item--menu" alt="menu icon" />
+             <img src={menu} className="nav__item nav__item--menu" alt="menu icon" onClick={toggleNav}/>
              <h2 className="nav__heading">Healthy Cocktails</h2>
              <img src={settings} className="nav__item" alt="settings icon" onClick={toggleSettings} />
         
@@ -55,7 +59,7 @@ const Nav = (props) => {
             
 
             { showSettings && <SettingsMenu userName={userName} toggleSettings={toggleSettings} handleSubmit={handleSubmit} />}
-            { <NavMenu searchTerm={searchTerm} handleInput={handleInput} handleChange={handleChange} />}
+            { showNav && <NavMenu searchTerm={searchTerm} handleInput={handleInput} handleChange={handleChange} />}
 
            
         </nav>
