@@ -13,21 +13,15 @@ const Nav = (props) => {
 
    
 
-    const { userName, handleSubmit } = props;
+    const { userName, handleSubmit, searchTerm, handleInput } = props;
 
     console.log("In Nav");
 
-    const [ searchTerm, setSearchTerm ] = useState("");
     const [ isChecked, setIsChecked ] = useState(false);
     const [ showSettings, setShowSettings ] = useState(false);
     const [ showNav, setShowNav ] = useState(true);
     
-    
 
-    const handleInput = event => {
-        const cleanInput = event.target.value.toLowerCase();
-        setSearchTerm(cleanInput);
-    }
 
     console.log("in nav search "+searchTerm);
 
@@ -47,10 +41,10 @@ const Nav = (props) => {
     return (
 
         <>
-            <div class="nav__main">
+            <div className="nav__main">
     
              <img src={menu} className="nav__item nav__item--menu" alt="menu icon" onClick={toggleNav}/>
-             <h2 className="nav__heading">Healthy Cocktails</h2>
+             <h2 className="nav__heading">Welcom to Prema's Cocktail Gallery</h2>
              <img src={settings} className="nav__item" alt="settings icon" onClick={toggleSettings} />
         
 
@@ -59,7 +53,7 @@ const Nav = (props) => {
             
 
             { showSettings && <SettingsMenu userName={userName} toggleSettings={toggleSettings} handleSubmit={handleSubmit} />}
-            { showNav && <NavMenu searchTerm={searchTerm} handleInput={handleInput} handleChange={handleChange} />}
+            { showNav && <NavMenu searchTerm={searchTerm} handleChange={handleChange} handleInput={handleInput}/>}
 
            
         </nav>

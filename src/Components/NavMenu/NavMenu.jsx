@@ -8,18 +8,17 @@ const NavMenu = (props) => {
 
 
 
-    const { searchTerm, handleInput, handleChange} = props;
+    const { searchTerm, handleChange, handleInput} = props;
 
-    console.log("In Nav Menu");
 
     return (
         <div className="nav-menu">
             <div className="nav-menu__content">
              <div className="nav__searchBox">
-             <SearchBox  label={"Cocktail..."} searchTerm={searchTerm} handleInput={handleInput}  />
+             <SearchBox  label={"Cocktail..."} searchTerm={searchTerm} handleInput={handleInput} />
               </div>
 
-             <div className="nav__filtersList">
+             <div>
                   <FiltersList handleChange={handleChange}/>
               </div>
             </div>

@@ -20,7 +20,7 @@ const ExploreCocktails = props => {
 
   return (
     <>
-      <SearchBox label={"Cocktails"} searchTerm={searchTerm} handleInput={handleInput} />
+      <SearchBox label={"Cocktails"} searchTerm={searchTerm} handleInput={handleInput}/>
       <CardList className="cocktail" drinks={filteredDrinks} />
     </>
   );
