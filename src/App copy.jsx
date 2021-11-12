@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect} from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
@@ -14,8 +16,6 @@ const App = () => {
     lastName: "Chhaya",
   });
 
-  const [drinks, setDrinks] = useState([]);
-
   const handleSubmit = (event) => {
     event.preventDefault();
     let firstName = event.target[0].value;
@@ -31,7 +31,7 @@ const App = () => {
   useEffect( () => {
     fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
       .then (res => res.json())
-      .then (data => setDrinks(data.drinks))
+      .then (data => data.drinks)
       .then (console.log(drinks))
       .catch (err => console.log(err))
   }, []);

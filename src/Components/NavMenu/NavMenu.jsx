@@ -6,7 +6,11 @@ import SearchBox from '../SearchBox/SearchBox';
 
 const NavMenu = (props) => {
 
+
+
     const { searchTerm, handleInput, handleChange} = props;
+
+    console.log("In Nav Menu");
 
     return (
         <div className="nav-menu">

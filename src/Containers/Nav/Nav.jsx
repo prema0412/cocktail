@@ -11,7 +11,11 @@ import NavMenu from '../../Components/NavMenu/NavMenu';
 
 const Nav = (props) => {
 
+   
+
     const { userName, handleSubmit } = props;
+
+    console.log("In Nav");
 
     const [ searchTerm, setSearchTerm ] = useState("");
     const [ isChecked, setIsChecked ] = useState(false);
@@ -24,6 +28,8 @@ const Nav = (props) => {
         const cleanInput = event.target.value.toLowerCase();
         setSearchTerm(cleanInput);
     }
+
+    console.log("in nav search "+searchTerm);
 
     const handleChange = event => {
         setIsChecked( !isChecked )

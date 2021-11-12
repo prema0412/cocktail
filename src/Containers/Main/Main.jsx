@@ -1,4 +1,3 @@
-
 import React from 'react'
 
 import ExploreCocktails from '../ExploreCocktails/ExploreCocktails';

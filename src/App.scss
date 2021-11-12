@@ -41,18 +41,18 @@ nav > ul {
 .nav__searchBox {
   display: flex;
   flex-direction: column;
-  background: gold;
-  border-radius: 5%;
-  border: 1px solid gold;
+  //background: gold;
+  border-radius: 2%;
+  //border: 1px solid gold;
   margin-left: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 200px;
+  width: 100px;
 
   &__label {
     font-size: 20px;
-    background: gold;
-    color: black;
+    background: black;
+    color: gold;
   }
 
   &__input {
