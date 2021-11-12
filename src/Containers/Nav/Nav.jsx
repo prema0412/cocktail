@@ -1,16 +1,27 @@
 
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 
-import SearchBox from '../../Components/SearchBox/SearchBox'
+import menu from '../../Assets/images/menu-icon.png'
 
-import FiltersList from '../../Components/FiltersList/FiltersList';
+import settings from '../../Assets/images/settings-icon.png'
 
-const Nav = () => {
+import './Nav.scss';
+import SettingsMenu from '../../Components/SettingsMenu/SettingsMenu';
+import NavMenu from '../../Components/NavMenu/NavMenu';
+
+const Nav = (props) => {
+
+    const { userName, handleSubmit } = props;
+
     const [ searchTerm, setSearchTerm ] = useState("");
-    const [ isChecked, setIsChecked ] = useState(false)
+    const [ isChecked, setIsChecked ] = useState(false);
+    const [ showSettings, setShowSettings ] = useState(false);
+    const [ showNav, setShowNav ] = useState(false);
+    
+    
 
     const handleInput = event => {
-        const cleanInput = event.target.toLowerCase();
+        const cleanInput = event.target.value.toLowerCase();
         setSearchTerm(cleanInput);
     }
 
@@ -18,17 +29,31 @@ const Nav = () => {
         setIsChecked( !isChecked )
     }
 
+    const toggleSettings = () => {
+        setShowSettings( !showSettings )
+    }
+
+
     return (
-        <div className="nav">
 
-            <div className="nav__searchBox">
-            <SearchBox  label={"Get Your Favorite Cocktail "} searchTerm={searchTerm} handleInput={handleInput}  />
-            </div>
+        <>
+            <div class="nav__main">
+    
+             <img src={menu} className="nav__item nav__item--menu" alt="menu icon" />
+             <h2 className="nav__heading">Healthy Cocktails</h2>
+             <img src={settings} className="nav__item" alt="settings icon" onClick={toggleSettings} />
+        
 
-            <div className="nav__filtersList">
-            <FiltersList handleChange={handleChange}/>
             </div>
-        </div>
+             <nav className="nav">
+            
+
+            { showSettings && <SettingsMenu userName={userName} toggleSettings={toggleSettings} handleSubmit={handleSubmit} />}
+            { <NavMenu searchTerm={searchTerm} handleInput={handleInput} handleChange={handleChange} />}
+
+           
+        </nav>
+        </>
     )
 }
 

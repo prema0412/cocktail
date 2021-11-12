@@ -3,15 +3,13 @@ import React from 'react'
 
 const SearchBox = (props) => {
     const { label, searchTerm, handleInput } = props;
+    
 
     return (
-       <form className="search-box">
-           <label htmlFor={label} className="search-box__label">{label}</label>
-           <input type="text" name={label} value={searchTerm} onInput={handleInput} className="search-box__input" />
-
-
-
-       </form>
+        <form className="nav__searchBox">
+        <label htmlFor={label} className="nav__searchBox__label">{label}</label>
+        <input type="text" name={label} value={searchTerm} onInput={handleInput} className="nav__searchBox__input"/>
+      </form>
     )
 }
 

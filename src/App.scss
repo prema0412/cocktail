@@ -1,50 +1,107 @@
 
+
 * {
   background: black;
   margin: 0;
   padding: 0;
 }
 
+
 .app {
-  border: 1px solid gold;
-  margin-top: 30px;
+  color: black;
+}
+
+@media (min-width: 992px) {
+  .app {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+h1 {
+  color: gold;
+  font-size: 30;
+  text-align: center;
+  padding: 10px;
+}
+
+h2 {
+  color: gold;
+  font-size: 20;
+  text-align: center;
+  padding: 2px;
 }
 
 nav > ul {
   list-style-type: none;
 }
 
-.nav {
 
-  float: left;
-  width: 18%;
-  height: 300px;
+
+.nav__searchBox {
+  display: flex;
+  flex-direction: column;
+  background: gold;
+  border-radius: 5%;
   border: 1px solid gold;
-  position: relative;
-  color: gold;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+
+  &__label {
+    font-size: 20px;
+    background: gold;
+    color: black;
+  }
+
+  &__input {
+    padding: 10px;
+    font-size: 18px;
+    border: 5px solid gold;
+    border-radius: 15px;
+    color: gold;
+    width: 150px;
+
+    &:focus {
+      border: 5px solid white;
+      outline: none;
+    }
+  }
+//}  
+
+
 
   
 
-  &__filtersList {
+  .nav__filtersList {
+
+      list-style-type: none;
      
 
         &__item {
     
             padding: 2px;
+            margin-left: 10px;
+            margin-top: 10px;
+            list-style-type: none;
+
         }
     }
   }
 
 
 .main {
-  width: 80%;
+  width: 100%;
+  flex: 1;
   display: flex;
+  overflow-x: auto;
   height: auto;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-left: 300px;
-  margin-top: 0;
+  margin-left: 100px;
+  margin-top: 500px;
   border: 1px solid gold;
   position: relative;
   padding: 5px;
@@ -52,7 +109,7 @@ nav > ul {
 }
 
 .cocktail{
-  width: 350px;
+  width: 300px;
   height: 400px;
   padding: 20px;
 

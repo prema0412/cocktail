@@ -1,18 +1,25 @@
 
 import React from 'react'
 
+import { Link } from 'react-router-dom';
+
+
 const CardList = (props) => {
 
-    const { key, drinkName, image } = props;
-
-    //console.log(drink);
+    const { drinks } = props;
 
     return (
-        <div className="cocktail">
-            <img className="cocktail__image" src={image} alt="" />
-            <h1 className="cocktail__title">{drinkName}</h1>
+        <>
+            {drinks.map( (drink) => (
+            <div key={drink.idDrink} className="cocktail">
+            <img className="cocktail__image" src={drink.strDrinkThumb} alt="" />
+            <h1 className="cocktail__title">{drink.strDrink}</h1>
+            <Link to={`cards/${drink.strDrink}`}>View More</Link>
            
         </div>
+            ))
+            }
+        </>
     )
 }
 

@@ -12,16 +12,11 @@ const Main = (props) => {
     console.log(drinks);
     return (
        <> 
-        <div className="main">
-            <CardList className="cocktail" drinks={drinks} />
-        ))
-            
-        </div>
-
-        <div className="explore">
+       <div className="main">
             <h2 className="explore__heading">Explore</h2>
             <ExploreCocktails drinks={drinks} />
         </div>
+        
        </> 
     )
 }

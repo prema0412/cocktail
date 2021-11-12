@@ -1,10 +1,38 @@
 
 .nav {
     display: flex;
-    flex-direction: column;
-
-    &__filtersList {
-        display: flex;
-        flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+    height: auto;
+    border: 1px solid gold;
+    position: relative;
+    color: gold;
+    margin-top: 30px;
+  
+    &__item {
+      height: 30px;
+      padding: 10px;
     }
-}
+
+    &__main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .nav {
+      grid-column: 1 / -1;
+    }
+  }
+
+  
+  
+  // .nav {
+  
+  //   float: left;
+  //  

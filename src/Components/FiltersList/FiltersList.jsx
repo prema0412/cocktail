@@ -7,25 +7,25 @@ const FiltersList = (props) => {
 
     return (
         <>
-        <ul className="filterList">
+        <ul className="nav__filtersList">
            <li>
                   With Banana  
-                <input class="filtersList__item" type="checkbox" id="banana" name="banana" value="With Banana" onChange={handleChange} />
+                <input className="nav__filtersList-item" type="checkbox" id="banana" name="banana" value="With Banana" onChange={handleChange} />
                
            </li>
            <li>
                  With Mango  
-                 <input class="filtersList__item" type="checkbox" id="mango" name="mango" value="With Mango" onChange={handleChange} />
+                 <input className="nav__filtersList-item" type="checkbox" id="mango" name="mango" value="With Mango" onChange={handleChange} />
                 
            </li>
            <li>
                  With Chocolate  
-                  <input class="filtersList__item" type="checkbox" id="chocolate" name="chocolate" value="With Chocolate" onChange={handleChange} />
+                  <input className="nav__filtersList-item" type="checkbox" id="chocolate" name="chocolate" value="With Chocolate" onChange={handleChange} />
                   
            </li>
            <li>
                  With Coffee  
-                 <input class="filtersList__item" type="checkbox" id="coffe" name="coffe" value="With Coffee" onChange={handleChange} />
+                 <input className="nav__filtersList-item" type="checkbox" id="coffe" name="coffe" value="With Coffee" onChange={handleChange} />
                 
            </li>
            
