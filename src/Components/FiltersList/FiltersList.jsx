@@ -1,6 +1,8 @@
 
 import React from 'react'
 
+import './FiltersList.scss'
+
 const FiltersList = (props) => {
 
     const { isCheckedBanana, isCheckedMango, isCheckedChocolate, isCheckedCoffee, handleChangeBanana, handleChangeMango, handleChangeChocolate, handleChangeCoffee  } = props;

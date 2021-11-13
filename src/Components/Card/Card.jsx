@@ -33,8 +33,6 @@ const Card = (props) => {
         fetchIngrdients();
     }
 
-  
-
 
 
     
@@ -48,7 +46,8 @@ const Card = (props) => {
             .map( (card, index) => (
                 <div key={index} className="card__item">
                     <h2>...Enjoy your Cocktail...</h2>
-                    <img src={card.strDrinkThumb} alt="cocktail" />
+                    <h3>{card.strDrink}</h3>
+                    <img src={card.strDrinkThumb} alt="cocktail" class="card__image" />
                 </div>    
             ))}
 
