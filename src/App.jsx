@@ -102,66 +102,103 @@ const handleChangeCoffee = event => {
   
   }
 
+  if (isCheckedBanana) {
+    drinks = fetchedDrinks.filter(drink => 
+      {
+         const drinkTitleLower = drink.strDrink.toLowerCase();
+  
+          return drinkTitleLower.includes("banana") && drink.strDrinkThumb;
+       })
+   }
+
+   if (isCheckedMango) {
+    drinks = fetchedDrinks.filter(drink => 
+      {
+         const drinkTitleLower = drink.strDrink.toLowerCase();
+  
+          return drinkTitleLower.includes("mango") && drink.strDrinkThumb;
+       })
+   }
+
+   if (isCheckedChocolate) {
+    drinks = fetchedDrinks.filter(drink => 
+      {
+         const drinkTitleLower = drink.strDrink.toLowerCase();
+  
+          return drinkTitleLower.includes("chocolate") && drink.strDrinkThumb;
+       })
+   }
+
+   if (isCheckedCoffee) {
+    drinks = fetchedDrinks.filter(drink => 
+      {
+         const drinkTitleLower = drink.strDrink.toLowerCase();
+  
+          return drinkTitleLower.includes("coffe") && drink.strDrinkThumb;
+       })
+   }
+  
 
 
-let searchkeys = []
 
-if (isCheckedBanana) {
-  searchkeys.push("banana")
-}
+// let searchkeys = []
 
-
-if (isCheckedMango) {
-  searchkeys.push("mango")
-}
-
-if (isCheckedChocolate) {
-  searchkeys.push("chocolate")
-}
-
-if (isCheckedCoffee) {
-  searchkeys.push("coffee")
-}
-
-if (searchkeys.length) {
-
-}
+// if (isCheckedBanana) {
+//   searchkeys.push("banana")
+// }
 
 
+// if (isCheckedMango) {
+//   searchkeys.push("mango")
+// }
 
-const handleSearchKeys = (filteredDrinks,searchKeys) => {
+// if (isCheckedChocolate) {
+//   searchkeys.push("chocolate")
+// }
 
-  console.log("I am Here in search key");
+// if (isCheckedCoffee) {
+//   searchkeys.push("coffee")
+// }
 
-  searchkeys.map( key => {
-  console.log(key);
+// if (searchkeys.length) {
 
-    filteredDrinks.push(matchSorter(fetchedDrinks, key, {keys: ['strDrink']})) 
-
-    console.log(filteredDrinks);
-
-    return filteredDrinks
-
-
-  })
-
-}
+// }
 
 
-if (searchkeys.length) {
 
-  console.log(searchkeys);
+// const handleSearchKeys = (filteredDrinks,searchKeys) => {
 
-  let filteredDrinks = []
+//   console.log("I am Here in search key");
 
-  handleSearchKeys(filteredDrinks,searchkeys);
-  console.log(filteredDrinks);
+//   searchkeys.map( key => {
+//   console.log(key);
 
-  if (filteredDrinks) {
-    drinks = filteredDrinks
-  } else drinks = fetchedDrinks;
+//     filteredDrinks.push(matchSorter(fetchedDrinks, key, {keys: ['strDrink']})) 
 
-}
+//     console.log(filteredDrinks);
+
+//     return filteredDrinks
+
+
+//   })
+
+// }
+
+
+// if (searchkeys.length) {
+
+//   console.log(searchkeys);
+
+//   let filteredDrinks = []
+
+//   handleSearchKeys(filteredDrinks,searchkeys);
+//   console.log(filteredDrinks);
+
+//   if (filteredDrinks) {
+//     drinks = filteredDrinks
+//   } else drinks = fetchedDrinks;
+
+// }
 
 
   
@@ -172,14 +209,6 @@ if (searchkeys.length) {
 
 
 
-//  if (isCheckedBanana) {
-//   drinks = fetchedDrinks.filter(drink => 
-//     {
-//        const drinkTitleLower = drink.strDrink.toLowerCase();
-
-//         return drinkTitleLower.includes("banana") && drink.strDrinkThumb;
-//      })
-//  }
 
   return (
 
