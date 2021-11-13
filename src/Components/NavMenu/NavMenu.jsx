@@ -8,7 +8,9 @@ const NavMenu = (props) => {
 
 
 
-    const { searchTerm, handleChange, handleInput} = props;
+    const { searchTerm, isCheckedBanana, isCheckedMango, isCheckedChocolate, isCheckedCoffee, handleChangeBanana, 
+        handleChangeMango,handleChangeChocolate,handleChangeCoffee,
+        handleInput } = props;
 
 
     return (
@@ -19,7 +21,14 @@ const NavMenu = (props) => {
               </div>
 
              <div>
-                  <FiltersList handleChange={handleChange}/>
+                  <FiltersList isCheckedBanana={isCheckedBanana} isCheckedMango={isCheckedMango} 
+                  isCheckedChocolate={isCheckedChocolate} 
+                  isCheckedCoffee={isCheckedCoffee} 
+                  handleChangeBanana={handleChangeBanana}
+                  handleChangeMango={handleChangeMango}
+                  handleChangeChocolate={handleChangeChocolate}
+                  handleChangeCoffee={handleChangeCoffee}
+                 />
               </div>
             </div>
         </div>

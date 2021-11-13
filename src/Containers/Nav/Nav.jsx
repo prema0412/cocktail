@@ -11,23 +11,13 @@ import NavMenu from '../../Components/NavMenu/NavMenu';
 
 const Nav = (props) => {
 
-   
+    const [showSettings, setShowSettings] = useState(false);
+    const [showNav, setShowNav] = useState(true);
 
-    const { userName, handleSubmit, searchTerm, handleInput } = props;
-
-    console.log("In Nav");
-
-    const [ isChecked, setIsChecked ] = useState(false);
-    const [ showSettings, setShowSettings ] = useState(false);
-    const [ showNav, setShowNav ] = useState(true);
-    
+    const { userName, handleSubmit, searchTerm, isCheckedBanana, isCheckedMango, isCheckedChocolate, isCheckedCoffee, handleChangeBanana, 
+        handleChangeMango, handleChangeChocolate, handleChangeCoffee, handleInput } = props;
 
 
-    console.log("in nav search "+searchTerm);
-
-    const handleChange = event => {
-        setIsChecked( !isChecked )
-    }
 
     const toggleSettings = () => {
         setShowSettings( !showSettings )
@@ -53,7 +43,10 @@ const Nav = (props) => {
             
 
             { showSettings && <SettingsMenu userName={userName} toggleSettings={toggleSettings} handleSubmit={handleSubmit} />}
-            { showNav && <NavMenu searchTerm={searchTerm} handleChange={handleChange} handleInput={handleInput}/>}
+            { showNav && <NavMenu searchTerm={searchTerm} isCheckedBanana={isCheckedBanana} isCheckedMango={isCheckedMango} isCheckedCoffee={isCheckedCoffee} isCheckedChocolate={isCheckedChocolate} 
+            handleChangeBanana={handleChangeBanana} handleChangeMango={handleChangeMango}
+            handleChangeChocolate={handleChangeChocolate} handleChangeCoffee={handleChangeCoffee}
+            handleInput={handleInput}/>}
 
            
         </nav>

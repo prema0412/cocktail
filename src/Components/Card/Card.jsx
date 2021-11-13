@@ -11,7 +11,7 @@ const Card = (props) => {
 
     const { title } = useParams();
 
-    console.log("title " +title);
+   
 
     const fetchIngrdients = ( () => {
 
@@ -48,7 +48,7 @@ const Card = (props) => {
             .map( (card, index) => (
                 <div key={index} className="card__item">
                     <h2>...Enjoy your Cocktail...</h2>
-                    <img src={card.strDrinkThumb} alt="" />
+                    <img src={card.strDrinkThumb} alt="cocktail" />
                 </div>    
             ))}
 
