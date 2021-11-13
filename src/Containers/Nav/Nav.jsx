@@ -34,7 +34,7 @@ const Nav = (props) => {
             <div className="nav__main">
     
              <img src={menu} className="nav__item nav__item--menu" alt="menu icon" onClick={toggleNav}/>
-             <h2 className="nav__heading">Welcom to Prema's Cocktail Gallery</h2>
+             <h2 className="nav__heading">Welcome to Prema's Cocktail Gallery</h2>
              <img src={settings} className="nav__item" alt="settings icon" onClick={toggleSettings} />
         
 
@@ -46,7 +46,7 @@ const Nav = (props) => {
             { showNav && <NavMenu searchTerm={searchTerm} isCheckedBanana={isCheckedBanana} isCheckedMango={isCheckedMango} isCheckedCoffee={isCheckedCoffee} isCheckedChocolate={isCheckedChocolate} 
             handleChangeBanana={handleChangeBanana} handleChangeMango={handleChangeMango}
             handleChangeChocolate={handleChangeChocolate} handleChangeCoffee={handleChangeCoffee}
-            handleInput={handleInput}/>}
+            handleInput={handleInput} toggleNav={toggleNav}/>}
 
            
         </nav>

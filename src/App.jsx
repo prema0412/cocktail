@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import './App.scss';
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import drinks from './data/drinks';
 import Nav from './Containers/Nav/Nav'
 import Main from './Containers/Main/Main'
@@ -23,19 +23,19 @@ const App = () => {
   const [isCheckedChocolate, setIsCheckedChocolate] = useState(false);
   const [isCheckedCoffee, setIsCheckedCoffee] = useState(false);
 
-  const handleChangeBanana = event => {
+  const handleChangeBanana = () => {
     setIsCheckedBanana( !isCheckedBanana )
 }
 
-const handleChangeMango = event => {
+const handleChangeMango = () => {
   setIsCheckedMango( !isCheckedMango )
 }
 
-const handleChangeChocolate = event => {
+const handleChangeChocolate = () => {
   setIsCheckedChocolate( !isCheckedChocolate )
 }
 
-const handleChangeCoffee = event => {
+const handleChangeCoffee = () => {
   setIsCheckedCoffee( !isCheckedCoffee )
 }
 
@@ -69,12 +69,11 @@ const handleChangeCoffee = event => {
 
   
  let drinks = fetchedDrinks;
+ let filteredDrinks = [];
 
  console.log(drinks);
 
   const handleSearchTerm = (filteredDrinks,searchTerm) => {
-
-   console.log("I am Here in search term");
 
     filteredDrinks = fetchedDrinks.filter(drink => 
       {
@@ -90,7 +89,7 @@ const handleChangeCoffee = event => {
   
   if (searchTerm) {
 
-    let filteredDrinks = []
+   // let filteredDrinks = []
 
     filteredDrinks = handleSearchTerm(filteredDrinks,searchTerm);
 
@@ -102,112 +101,63 @@ const handleChangeCoffee = event => {
   
   }
 
-  if (isCheckedBanana) {
-    drinks = fetchedDrinks.filter(drink => 
-      {
-         const drinkTitleLower = drink.strDrink.toLowerCase();
-  
-          return drinkTitleLower.includes("banana") && drink.strDrinkThumb;
-       })
-   }
+ 
 
-   if (isCheckedMango) {
-    drinks = fetchedDrinks.filter(drink => 
-      {
-         const drinkTitleLower = drink.strDrink.toLowerCase();
-  
-          return drinkTitleLower.includes("mango") && drink.strDrinkThumb;
-       })
-   }
+let searchkeys = []
 
-   if (isCheckedChocolate) {
-    drinks = fetchedDrinks.filter(drink => 
-      {
-         const drinkTitleLower = drink.strDrink.toLowerCase();
-  
-          return drinkTitleLower.includes("chocolate") && drink.strDrinkThumb;
-       })
-   }
-
-   if (isCheckedCoffee) {
-    drinks = fetchedDrinks.filter(drink => 
-      {
-         const drinkTitleLower = drink.strDrink.toLowerCase();
-  
-          return drinkTitleLower.includes("coffe") && drink.strDrinkThumb;
-       })
-   }
-  
+if (isCheckedBanana) {
+  searchkeys.push("banana")
+}
 
 
+if (isCheckedMango) {
+  searchkeys.push("mango")
+}
 
-// let searchkeys = []
+if (isCheckedChocolate) {
+  searchkeys.push("chocolate")
+}
 
-// if (isCheckedBanana) {
-//   searchkeys.push("banana")
-// }
-
-
-// if (isCheckedMango) {
-//   searchkeys.push("mango")
-// }
-
-// if (isCheckedChocolate) {
-//   searchkeys.push("chocolate")
-// }
-
-// if (isCheckedCoffee) {
-//   searchkeys.push("coffee")
-// }
-
-// if (searchkeys.length) {
-
-// }
+if (isCheckedCoffee) {
+  searchkeys.push("coffee")
+}
 
 
+const handleSearchKeys = (filteredDrinks,searchkeys) => {
 
-// const handleSearchKeys = (filteredDrinks,searchKeys) => {
+  console.log("I am Here in search key");
 
-//   console.log("I am Here in search key");
+  searchkeys.map( key => {
+  console.log(key);
 
-//   searchkeys.map( key => {
-//   console.log(key);
+    const tempArray=matchSorter(fetchedDrinks, key, {keys: ['strDrink']})
 
-//     filteredDrinks.push(matchSorter(fetchedDrinks, key, {keys: ['strDrink']})) 
+    filteredDrinks.push(...tempArray)
 
-//     console.log(filteredDrinks);
+    console.log(filteredDrinks);
 
-//     return filteredDrinks
-
-
-//   })
-
-// }
+    return filteredDrinks
 
 
-// if (searchkeys.length) {
+  })
 
-//   console.log(searchkeys);
-
-//   let filteredDrinks = []
-
-//   handleSearchKeys(filteredDrinks,searchkeys);
-//   console.log(filteredDrinks);
-
-//   if (filteredDrinks) {
-//     drinks = filteredDrinks
-//   } else drinks = fetchedDrinks;
-
-// }
+}
 
 
-  
+if (searchkeys.length) {
 
+  console.log(searchkeys);
 
-  
+ // let filteredDrinks = []
 
+  handleSearchKeys(filteredDrinks,searchkeys);
+  console.log(filteredDrinks);
 
+  if (filteredDrinks) {
+    drinks = filteredDrinks
+  } else drinks = fetchedDrinks;
 
+}
 
 
   return (

@@ -14,6 +14,11 @@
     &__item {
       height: 30px;
       padding: 10px;
+
+      &__menu {
+        position: absolute;
+        margin-left: 10px;
+      }
     }
 
     &__main {
@@ -22,6 +27,17 @@
         justify-content: space-around;
         margin-top: 10px;
     }
+
+    &__heading{
+      color: gold;
+      font-size: 20;
+      text-align: center;
+      padding: 2px;
+      position: absolute;
+      
+    }
+
+   
   }
   
   @media (min-width: 992px) {
@@ -30,7 +46,17 @@
     }
   }
 
-  
+  .black-cross {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    width: 10px;
+    height: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
   
   // .nav {
   

@@ -13,43 +13,42 @@ const Card = (props) => {
 
    
 
-    const fetchIngrdients = ( () => {
+    // const fetchIngrdients = ( () => {
 
-        console.log("calling API");
+    //     console.log("calling API");
 
-        const apistring = `https://thecocktaildb.com/api/json/v1/1/lookup.php?i=12672`;
-        console.log(apistring);
-        fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${title}`)
-          .then (res => res.json())
-          .then (data => console.log(data.ingredients))
-          .catch (err => console.log(err))
-      });
+    //     const apistring = `https://thecocktaildb.com/api/json/v1/1/lookup.php?i=12672`;
+    //     console.log(apistring);
+    //     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${title}`)
+    //       .then (res => res.json())
+    //       .then (data => console.log(data.ingredients))
+    //       .catch (err => console.log(err))
+    //   });
 
 
-    if ( title )
+    // if ( title )
 
-    {
-        console.log("I am here");
-        fetchIngrdients();
-    }
+    // {
+    //     console.log("I am here");
+    //     fetchIngrdients();
+    // }
 
 
 
     
-    const drink = drinks.filter(card => card.strDrink === title);
+    const drink = drinks.find(card => card.idDrink == title);
+
+    console.log(drink);
 
     return (
         <section className="card" >
-            <div className="card__container">
+        <div className="card__container">
 
-            { drinks.filter(card => card.strDrink === title)
-            .map( (card, index) => (
-                <div key={index} className="card__item">
-                    <h2>...Enjoy your Cocktail...</h2>
-                    <h3>{card.strDrink}</h3>
-                    <img src={card.strDrinkThumb} alt="cocktail" class="card__image" />
-                </div>    
-            ))}
+            <div className="card__item">
+             <h2>...Enjoy your Cocktail...</h2>
+             <h3>{drink.strDrink}</h3>
+             <img src={drink.strDrinkThumb} alt="cocktail" className="card__image" />
+         </div>
 
             </div>
 

@@ -13,6 +13,7 @@ const SettingsMenu = (props) => {
     return (
         <div>
             <div className="settings-menu__content">
+            <img src={whiteCross} alt="Close menu" className="nav-menu__cross" onClick={toggleSettings} />
                  <img src={profilePicture} alt="profile" className="settings-menu__profile" />
                  <h2 className="settings-menu__title">Hi {userName}</h2>
                   <form className="settings-menu__form" onSubmit={handleSubmit}>

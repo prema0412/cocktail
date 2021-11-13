@@ -1,14 +1,14 @@
 
 
 * {
-  background: black;
+  background: #301934;
   margin: 0;
   padding: 0;
 }
 
 
 .app {
-  color: black;
+  color: #301934;
 }
 
 @media (min-width: 992px) {
@@ -51,7 +51,7 @@ nav > ul {
 
   &__label {
     font-size: 20px;
-    background: black;
+    background: #301934;
     color: gold;
   }
 
@@ -89,7 +89,7 @@ nav > ul {
   justify-content: space-between;
   margin-left: 25px;
   margin-top: 200px;
-  margin-right: 25px;
+  margin-right: 35px;
   border: 1px solid gold;
   position: relative;
   padding: 5px;
@@ -100,6 +100,7 @@ nav > ul {
   width: 200px;
   height: 300px;
   padding: 15px;
+  
 
  // border: 2px solid gold;
 
@@ -117,5 +118,10 @@ nav > ul {
       height: 200px;
       border-radius: 10%;
       margin-left: 15px;
+  }
+
+  &__link {
+    text-align: center;
+    color: white;
   }
 }

@@ -6,6 +6,18 @@ ul  {
     list-style-type: none;
   }
 
+  .black-cross {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    width: 10px;
+    height: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
 .nav-menu {
     background-color: gold;
     position: absolute;
@@ -14,6 +26,8 @@ ul  {
     // right: 0;
     // bottom: 0;
     // z-index: 1;
+
+    
   
     &__content {
       height: 100%;
@@ -47,7 +61,15 @@ ul  {
       }
   
       &__cross {
-        right: 20px;
+        position: absolute;
+        top: 20px;
+        right: 50px;
+        width: 10px;
+        height: 10px;
+    
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }

@@ -13,13 +13,12 @@ const CardList = (props) => {
 
     return (
         <>
-            {drinks.map( (drink, index) => (
-            <div key={drink.IdDrink} className="cocktail">
+            {drinks.map( (drink) => (
+            <div key={drink.idDrink} className="cocktail">
             <img className="cocktail__image" src={drink.strDrinkThumb} alt="" />
             <h1 className="cocktail__title">{drink.strDrink}</h1>
-            <Link to={`cards/${drink.strDrink}`}>View More</Link>
-           
-        </div>
+            <Link clasName="cocktail__link" to={`cards/${drink.idDrink}`}>View More</Link>
+           </div>
             ))
             }
         </>

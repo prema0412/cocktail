@@ -10,14 +10,15 @@ const NavMenu = (props) => {
 
     const { searchTerm, isCheckedBanana, isCheckedMango, isCheckedChocolate, isCheckedCoffee, handleChangeBanana, 
         handleChangeMango,handleChangeChocolate,handleChangeCoffee,
-        handleInput } = props;
+        handleInput, toggleNav } = props;
 
 
     return (
         <div className="nav-menu">
             <div className="nav-menu__content">
              <div className="nav__searchBox">
-             <SearchBox  label={"Cocktail..."} searchTerm={searchTerm} handleInput={handleInput} />
+             <img src={blackCross} alt="Close menu" className="black-cross" onClick={toggleNav} />   
+             <SearchBox  label={"Find Cocktail..."} searchTerm={searchTerm} handleInput={handleInput} />
               </div>
 
              <div>

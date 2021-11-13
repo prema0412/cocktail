@@ -3,14 +3,17 @@
  .nav__filtersList {
 
     list-style-type: none;
-   
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    align-items: flex-start;
+    margin-right: 10px;
+  }
 
-      &__item {
-  
-          padding: 2px;
-          margin-left: 10px;
-          margin-top: 10px;
-          list-style-type: none;
-
-      }
+  .nav__filtersList-item{
+      padding: 10px;
+      margin-left: 10px;
+      text-align: right;
+      position: relative;
+      background: gold;
   }
