@@ -10,11 +10,13 @@ In the gallery , you can use the search box to search basis:
 
 ### Alphabets/Full Name
 
-    Cocktail images will start redering cocktails matching the entered text as you start typing the alphabets 
+    Cocktail images will start redering cocktails matching the entered text as you start typing the alphabets. 
 
 ### Select List of ingredients
 
-    Cocktail images will start redering cocktails as you click on a checkbox or multiple check boxes which lists the ingredients that can be searched for
+    Cocktail images will start redering cocktails as you click on a checkbox or multiple check boxes which lists the ingredients that can be searched for.
+
+![Component Tree](/component-tree.png)  
 
 
 
