@@ -1,64 +1,74 @@
 
 .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    width: 100%;
-    height: auto;
-    border: 1px solid gold;
-    position: relative;
-    color: gold;
-    margin-top: 30px;
-  
-    &__item {
-      height: 30px;
-      padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  width: 100%;
+  height: auto;
+  border: 1px solid gold;
+  position: relative;
+  color: gold;
+  margin-top: 30px;
+  margin-left: 25px;
 
-      &__menu {
-        position: absolute;
-        margin-left: 10px;
-      }
-    }
+  &__item {
+    height: 30px;
+    padding: 10px;
 
-    &__main {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin-top: 10px;
-    }
-
-    &__heading{
-      color: gold;
-      font-size: 20;
-      text-align: center;
-      padding: 2px;
+    &__menu {
       position: absolute;
-      
-    }
-
-   
-  }
-  
-  @media (min-width: 992px) {
-    .nav {
-      grid-column: 1 / -1;
+      margin-left: 10px;
+      justify-content: flex-start;
     }
   }
 
-  .black-cross {
+  &__main {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 10px;
+  }
+
+  &__heading{
+    color: gold;
+    font-size: 20;
+    text-align: center;
+    padding: 2px;
     position: absolute;
-    top: 20px;
-    right: 50px;
-    width: 10px;
-    height: 10px;
-
-    &:hover {
-      cursor: pointer;
-    }
+    
   }
-  
-  // .nav {
-  
-  //   float: left;
-  //  
+
+  &__p{
+    color: gold;
+    font-size: 10;
+    text-align: center;
+    padding: 2px;
+    position: absolute;
+  }
+
+ 
+}
+
+@media (min-width: 992px) {
+  .nav {
+    grid-column: 1 / -1;
+  }
+}
+
+.black-cross {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  width: 10px;
+  height: 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// .nav {
+
+//   float: left;
+//  

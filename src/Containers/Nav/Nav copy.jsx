@@ -41,15 +41,13 @@ const Nav = (props) => {
             </div>
              <nav className="nav">
             
-            <div className="nav__settings">
+
             { showSettings && <SettingsMenu userName={userName} toggleSettings={toggleSettings} handleSubmit={handleSubmit} />}
-            </div>
-            <div className="nav__menu">
             { showNav && <NavMenu searchTerm={searchTerm} isCheckedBanana={isCheckedBanana} isCheckedMango={isCheckedMango} isCheckedCoffee={isCheckedCoffee} isCheckedChocolate={isCheckedChocolate} 
             handleChangeBanana={handleChangeBanana} handleChangeMango={handleChangeMango}
             handleChangeChocolate={handleChangeChocolate} handleChangeCoffee={handleChangeCoffee}
             handleInput={handleInput} toggleNav={toggleNav}/>}
-            </div>
+
            
         </nav>
         </>

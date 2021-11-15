@@ -20,15 +20,14 @@ it("should render the basic input fields", () => {
     render(<SettingsMenu />);
 
     //2. Act
-    // getBy.....
-    //use i at the end for case insensitive search for getByRole
-    const nameInput = screen.getByRole("textbox", { name: /name/i });
-    // const emailInput = screen.getByRole("textbox", { name: /email/i })
-    const emailInput = screen.getByPlaceholderText( /e.g. test@test.com/i  )
+    const firstNameInput = screen.getByRole("textbox", { name: /firstName/i });
+    const lastMailInput = getByRole("textbox", { name: /lastName/i });
+    const saveButton = getByRole("button", { name: /Save/i });
     //3. Assert
 
-    expect(nameInput).toBeInTheDocument();
-    expect(emailInput).toBeTruthy();
+    expect(firstNameInput).toBeInTheDocument();
+    expect(lastMailInput).toBeTruthy();
+    expect(saveButton).toBeTruthy();
 
     //getAllBy...
 
@@ -39,7 +38,7 @@ it("should render the basic input fields", () => {
     })
 })  
 
-    it("should not render error message on load", () => {
+    xit("should not render error message on load", () => {
 
         render(<SettingsMenu />)
         const errorMessage = screen.queryByText(/Sorry something went wrong/i)
@@ -47,7 +46,7 @@ it("should render the basic input fields", () => {
         expect(errorMessage).not.toBeInTheDocument();
     })
 
-    it("should not render success message on load", () => {
+    xit("should not render success message on load", () => {
 
         render(<SettingsMenu />)
         const successMessage = screen.queryByText(/Thank you for submitting! We'll be in touch/i)
@@ -55,7 +54,7 @@ it("should render the basic input fields", () => {
         expect(successMessage).not.toBeInTheDocument();
     })
 
-   it("should not submit the form with invalid fields", () => {
+   xit("should not submit the form with invalid fields", () => {
 
         render(<SettingsMenu />)
         const errorMessage = screen.queryByText(/Sorry something went wrong/i)
@@ -75,25 +74,7 @@ it("should render the basic input fields", () => {
         //expect the error text to be dislayed
    })
 
-   it("should accept the form with valid fields", () => {
-
-    render(<SettingsMenu />)
-    const successMessage = screen.queryByText(/Thank you for submitting! We'll be in touch/i)
-    const errorMessage = screen.queryByText(/Sorry something went wrong/i)
-    const nameInput = screen.getByRole("textbox", { name: /name/i });
-    userEvent.type(nameInput, "Prema");
-
-    const emailInput = screen.getByRole("textbox", { name: /email/i });
-    userEvent.type(emailInput,"prema.chhaya@gmail.com");
-
-    const button = screen.getByRole("button", { name: /sign in/i });
-    userEvent.click(button);
-
-    //Assert
-    expect(successMessage).toBeTruthy;
-    expect(errorMessage).toBeFalsy;
-    //expect the success text to be dislayed
-})
+  
 
 
    
